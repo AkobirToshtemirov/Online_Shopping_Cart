@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Cart {
 
   private final Scanner SCANNER = new Scanner(System.in);
+
   public void addProduct(List<Product> products) {
     System.out.println("Adding product");
 
@@ -23,8 +24,47 @@ public class Cart {
   }
 
   public void removeProduct(List<Product> products) {
+    System.out.print("Enter product name or product ID to remove it: ");
+    String input = SCANNER.next();
+    int inp = -1;
+    if (input.matches("\\d+")) {
+      inp = Integer.parseInt(input);
+    }
 
+    for (Product product : products) {
+      if (product.getName().equals(input)) {
+        makeStructure(products, product);
+        break;
+      }
+      if (product.getProductID() == inp) {
+        makeStructure(products, product);
+        break;
+      }
+
+      else if (product == products.get(products.size() - 1)) {
+        System.out.println("Invalid value is added. Please try again. Make sure you are entering available product!");
+      }
+    }
   }
 
+  public void showProducts(List<Product> products) {
+    int i = 1;
+    for (Product product : products) {
+      System.out.println();
+      System.out.println("Product #" + i);
+      System.out.println("Product name: " + product.getName());
+      System.out.println("Product id: " + product.getProductID());
+      System.out.println("Product price: " + product.getPrice());
+      System.out.println("Quantity: " + product.getQuantity());
+      System.out.println();
+      i++;
+    }
+  }
+
+  public void makeStructure(List<Product> products, Product product) {
+    System.out.println("Product has been removed! Removed product:");
+    System.out.println("Product name: " + product.getName() + " | product ID: " + product.getProductID());
+    products.remove(product);
+  }
 
 }
