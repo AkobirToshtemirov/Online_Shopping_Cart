@@ -17,36 +17,36 @@ public class Main {
 
         System.out.println("Online Shopping App!");
 
-        while(true) {
+        while (true) {
             System.out.println("""
                     MENU:
-                    
+
                     Product Section:
                     PRODUCTS - "1";
                     ADD_PRODUCT - "2";
                     REMOVE_PRODUCT - "3";
-                    
+
                     Order Section:
                     PLACE_AN_ORDER - "4";
                     TRACK_ORDER_STATUS - "5";
-                    
+
                     Payment Section:
                     TOTAL_PAYMENT - "6";
                     PAY_FOR_PRODUCT - "7";
-                    
+
                     Customer Section:
                     CUSTOMER_INFORMATION - "8";
-                    
+
                     EXIT - '9'""");
 
             System.out.print("Option: ");
 
             int option = sc.nextInt();
 
-            switch (option){
+            switch (option) {
                 case 1 -> product.showProducts(products);
                 case 2 -> cart.addProduct(products);
-                case 3 -> product.showProducts(products);
+                case 3 -> cart.removeProduct(products);
                 case 6 -> System.exit(0);
                 default -> System.out.println("Invalid value is added!");
             }
