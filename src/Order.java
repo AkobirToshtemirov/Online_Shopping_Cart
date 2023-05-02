@@ -41,6 +41,11 @@ public class Order {
 
     boolean paymentSuccess = Payment.processPayment(totalCost);
 
+    if(paymentSuccess){
+      System.out.println("Processing...");
+      generateInvoice(products);
+    } else
+        setStatus("Cancelled!");
   }
 
   public void generateInvoice(List<Product> products) {

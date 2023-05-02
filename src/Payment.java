@@ -1,7 +1,8 @@
 public class Payment {
 
   public static boolean processPayment(double amount){
-    return true;
+    boolean paymentSuccess = amount > 0;
+    return paymentSuccess;
   }
 
   public void updateOrderStatus(int orderID, String status) {
