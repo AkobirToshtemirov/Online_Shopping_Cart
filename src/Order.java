@@ -39,14 +39,28 @@ public class Order {
   public void placeOreder(List<Product> products) {
     double totalCost = cart.calculateTotal(products);
 
+    boolean paymentSuccess = Payment.processPayment(totalCost);
+
+  }
+
+  public void generateInvoice(List<Product> products) {
+    double totalCost = cart.calculateTotal(products);
+
+    System.out.println("Order ID: " + orderID);
+    System.out.println("Customer Name: " + customer.getName());
+    System.out.println("Customer Address: " + customer.getAddress());
+    System.out.println("Customer Contact Number: " + customer.getContactNumber());
+    System.out.println("Customer Email: " + customer.getEmail());
+    System.out.println("Cart Items:");
+
+    for(Product product : products)
+      System.out.println(product.getName() + " x" + product.getQuantity() + " - $" + product.getPrice());
+    
+    System.out.println("Total cost: $" + totalCost);
   }
 
   public void trackOrderStatus(int orderID) {
     // This method can be used to track the status of a particular order.
-  }
-
-  public void generateInvoice(int orderID) {
-    // This method can be used to generate an invoice for a particular order.
   }
 
 }
