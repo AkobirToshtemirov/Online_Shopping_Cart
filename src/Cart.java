@@ -53,12 +53,24 @@ public class Cart {
       System.out.println();
       System.out.println("Product #" + i);
       System.out.println("Product name: " + product.getName());
-      System.out.println("Product id: " + product.getProductID());
-      System.out.println("Product price: " + product.getPrice());
+      System.out.println("Product ID: " + product.getProductID());
+      System.out.println("Product price: $" + product.getPrice());
       System.out.println("Quantity: " + product.getQuantity());
       System.out.println();
       i++;
     }
+
+    int totalProduct = calculateTotal(products);
+    System.out.println("Total amount of products: " + totalProduct);
+  }
+
+  public int calculateTotal(List<Product> products) {
+    int sum = 0;
+
+    for (Product product : products)
+      sum += product.getQuantity();
+
+    return sum;
   }
 
   public void makeStructure(List<Product> products, Product product) {
