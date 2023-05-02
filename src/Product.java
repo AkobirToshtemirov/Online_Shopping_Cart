@@ -36,18 +36,4 @@ public class Product {
     this.quantity = quantity;
   }
 
-  public void showProducts(List<Product> products){
-    int i = 1;
-    for (Product product : products) {
-      System.out.println();
-      System.out.println("Product #" + i);
-      System.out.println("Product name: " + product.name);
-      System.out.println("Product id: " + product.productID);
-      System.out.println("Product price: " + product.price);
-      System.out.println("Quantity: " +product.quantity);
-      System.out.println();
-      i++;
-    }
-  }
-
 }

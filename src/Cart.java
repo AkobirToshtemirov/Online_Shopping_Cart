@@ -67,4 +67,12 @@ public class Cart {
     products.remove(product);
   }
 
+  public void showCustomerInfo(Customer customer) {
+    System.out.println("Customer Information: ");
+    System.out.println("Customer name: " + customer.getName());
+    System.out.println("Customer address: " + customer.getAddress());
+    System.out.println("Customer phone: " + customer.getContactNumber());
+    System.out.println("Customer email: " + customer.getEmail());
+  }
+
 }

@@ -31,13 +31,4 @@ public class Customer {
   public String getEmail() {
     return email;
   }
-
-  public void showCustomerInfo(){
-    System.out.println("Customer Information: ");
-    System.out.println("Customer name: " + name);
-    System.out.println("Customer address: " + address);
-    System.out.println("Customer phone: " + contactNumber);
-    System.out.println("Customer email: " + email);
-  }
-
 }
