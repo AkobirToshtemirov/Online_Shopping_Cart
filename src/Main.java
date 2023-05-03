@@ -8,6 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // Customer
+        
         Customer customer = new Customer("John Doe", "Sergeli, Choshtepa, O'zar Street, 32", 222_22_22,
                 "johndoe@hotmail.com");
 
@@ -19,6 +20,9 @@ public class Main {
 
         // Cart
         Cart cart = new Cart();
+
+        // Order
+        Order order = new Order(2, cart, customer);
 
         System.out.println("Online Shopping App!");
         while (true) {
@@ -50,7 +54,7 @@ public class Main {
                 case 1 -> cart.showProducts(products);
                 case 2 -> cart.addProduct(products);
                 case 3 -> cart.removeProduct(products);
-                // case 4 -> ;
+                case 4 -> order.placeOreder(products);
                 // case 5 -> ;
                 // case 6 -> ;
                 // case 7 -> ;

@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Scanner;
 
 public class Order {
 
@@ -41,11 +40,11 @@ public class Order {
 
     boolean paymentSuccess = Payment.processPayment(totalCost);
 
-    if(paymentSuccess){
+    if (paymentSuccess) {
       System.out.println("Processing...");
       generateInvoice(products);
     } else
-        setStatus("Cancelled!");
+      setStatus("Cancelled!");
   }
 
   public void generateInvoice(List<Product> products) {
@@ -58,9 +57,9 @@ public class Order {
     System.out.println("Customer Email: " + customer.getEmail());
     System.out.println("Cart Items:");
 
-    for(Product product : products)
+    for (Product product : products)
       System.out.println(product.getName() + " x" + product.getQuantity() + " - $" + product.getPrice());
-    
+
     System.out.println("Total cost: $" + totalCost);
   }
 

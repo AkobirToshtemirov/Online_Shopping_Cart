@@ -5,9 +5,7 @@ public class Customer {
   private long contactNumber;
   private String email;
 
-  public Customer(){
-
-  }
+  public Customer(){ }
 
   public Customer(String name, String address, long contactNumber, String email) {
     this.name = name;

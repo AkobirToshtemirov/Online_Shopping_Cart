@@ -68,7 +68,7 @@ public class Cart {
     int sum = 0;
 
     for (Product product : products)
-      sum += product.getQuantity();
+      sum += product.getPrice();
 
     return sum;
   }
